@@ -5,7 +5,59 @@ def main():
     # testGettersAndSetters()
     # testAddNodeAfter()
     # testRemoveNodeAfter()
-    review()
+    # review()
+    #testListLength()
+    testListSearch()
+
+def testListSearch():
+    print("Testing List Search")
+    
+    #Construct a node with data equal to S and link equal to None
+    #and assign its reference to head
+    head = node("S", None) # S
+
+    #Construct a node with data equal to B and link equal to Head
+    #and assign its reference to head
+    head = node("B", head) # B -> S
+
+    #Construct a node with data equal to O and link equal to Head
+    #and assign its reference to head
+    head = node("O", head) # O -> B -> S
+
+    #Construct a node with data equal to J and link equal to Head
+    #and assign its reference to head
+    head = node("J", head) # J -> O -> B -> S
+
+    print("Head contains", node.listSearch(head, "J").getData())
+    print("Head contains", node.listSearch(head, "O").getData())
+    print("Head contains", node.listSearch(head, "B").getData())
+    print("Head contains", node.listSearch(head, "S").getData())
+    
+    if (node.listSearch(head, "Z") != None):
+        print("Head contains", node.listSearch(head, "Z").getData())
+    else:
+        print("Head does not contain Z.")
+
+def testListLength():
+    print("Testing List Length")
+
+    #Construct a node with data equal to S and link equal to None
+    #and assign its reference to head
+    head = node("S", None) # S
+
+    #Construct a node with data equal to B and link equal to Head
+    #and assign its reference to head
+    head = node("B", head) # B -> S
+
+    #Construct a node with data equal to O and link equal to Head
+    #and assign its reference to head
+    head = node("O", head) # O -> B -> S
+
+    #Construct a node with data equal to J and link equal to Head
+    #and assign its reference to head
+    head = node("J", head) # J -> O -> B -> S
+
+    print("Length of head is: ", node.listlength(head))
 
 def review():
     print("Review")
@@ -68,7 +120,7 @@ def review():
 def testRemoveNodeAfter():
     print("Testing Remove Node After")
 
-        #Construct a node with data equal to S and link equal to None
+    #Construct a node with data equal to S and link equal to None
     #and assign its reference to head
     head = node("S", None) # S
 
