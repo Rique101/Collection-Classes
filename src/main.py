@@ -3,6 +3,7 @@ from stack.stack import *
 from stack.balancedparens import *
 from stack.calculator import *
 from stack.serialsearch import *
+from stack.selectionsort import *
 def main():
     # testInit()
     # testGettersAndSetters()
@@ -18,19 +19,60 @@ def main():
     #testPop()
     #testIsEmpty()
     #testPeek()
-    print("Parenthesis are balanced?", balancedparens.isBalanced("{X+Y")) # False
-    print("Parenthesis are balanced?", balancedparens.isBalanced("{X+Y)")) # False
-    print("Parenthesis are balanced?", balancedparens.isBalanced("({X+Y}*Z)")) # True
-    print("Parenthesis are balanced?", balancedparens.isBalanced("[A+B]*({X+Y}*Z)")) # True
-    print("(((6+9)/3)*(6-4)) = ", calculator.evaluate("(((6+9)/3)*(6-4))"))
-    print("(6+(3*(6-4))) = ", calculator.evaluate("(6+(3*(6-4)))"))
-    print("((5+2)-(3*(6/9))) = ", calculator.evaluate("((5+2)-(3*(6/9)))"))
-    print("((5*2)-(3*(6/2))) = ", calculator.evaluate("((5*2)-(3*(6/2)))"))
-
+    #print("Parenthesis are balanced?", balancedparens.isBalanced("{X+Y")) # False
+    #print("Parenthesis are balanced?", balancedparens.isBalanced("{X+Y)")) # False
+    #print("Parenthesis are balanced?", balancedparens.isBalanced("({X+Y}*Z)")) # True
+    #print("Parenthesis are balanced?", balancedparens.isBalanced("[A+B]*({X+Y}*Z)")) # True
+    #print("(((6+9)/3)*(6-4)) = ", calculator.evaluate("(((6+9)/3)*(6-4))"))
+    #print("(6+(3*(6-4))) = ", calculator.evaluate("(6+(3*(6-4)))"))
+    #print("((5+2)-(3*(6/9))) = ", calculator.evaluate("((5+2)-(3*(6/9)))"))
+    #print("((5*2)-(3*(6/2))) = ", calculator.evaluate("((5*2)-(3*(6/2)))"))
     #testSerialSearch()
+    testSelectionSort()
+
+
+def testSelectionSort():
+
+    # create an empty stack
+    data = stack()
+    
+    # initialize first
+    first = 1
+    #first = 4
+    #first = 6
+    
+    # push -7 onto the top of the stack
+    data.push(-7)
+    
+    # push 42 onto the top of the stack
+    data.push(42)
+    
+    # push 70 onto the top of the stack
+    data.push(70)
+    
+    # push 39 onto the top of the stack
+    data.push(39)
+    
+    # push 3 onto the top of the stack
+    data.push(3)
+    
+    # push 63 onto the top of the stack
+    data.push(63)
+    
+    # push 8 onto the top of the stack
+    data.push(8)
+    
+    # print unsorted stack
+    print("Unsorted Stack: ",data)
+    
+    # call selection sort method
+    #print sorted stack
+    print("Sorted Stack: ", selectionsort(data, first))
+
+
 def testSerialSearch():
     # create an empty stack
-    s = stack()
+    a = stack()
     
     # initialize first
     # initialize size
@@ -40,31 +82,31 @@ def testSerialSearch():
     target = 70
     
     # push -7 onto the top of the stack
-    s.push(-7)
+    a.push(-7)
     
     # push 42 onto the top of the stack
-    s.push(42)
+    a.push(42)
     
     # push 70 onto the top of the stack
-    s.push(70)
+    a.push(70)
     
     # push 39 onto the top of the stack
-    s.push(39)
+    a.push(39)
     
     # push 3 onto the top of the stack
-    s.push(3)
+    a.push(3)
     
     # push 63 onto the top of the stack
-    s.push(63)
+    a.push(63)
     
     # push 8 onto the top of the stack
-    s.push(8)
+    a.push(8)
     
     # print the stack
-    print(s)
+    print(a)
     
     # call serial search method and display its return.
-    print(f"{target} found in position", testSerialSearch(s, first, size, target))
+    print(target, 'found at node position', serialsearch(a, first, size, target))
 
 
 def testPeek():
