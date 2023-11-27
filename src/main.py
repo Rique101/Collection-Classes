@@ -4,6 +4,8 @@ from stack.balancedparens import *
 from stack.calculator import *
 from stack.serialsearch import *
 from stack.selectionsort import *
+from queues.queue import *
+from queues.palindrome import *
 def main():
     # testInit()
     # testGettersAndSetters()
@@ -28,8 +30,78 @@ def main():
     #print("((5+2)-(3*(6/9))) = ", calculator.evaluate("((5+2)-(3*(6/9)))"))
     #print("((5*2)-(3*(6/2))) = ", calculator.evaluate("((5*2)-(3*(6/2)))"))
     #testSerialSearch()
-    testSelectionSort()
+    #testSelectionSort()
+    #testEnqueue()
+    #testQueueIsEmpty()
+    #testDequeue()
+    #testQueuePeek()
+    testIsPalindrome()
 
+def testIsPalindrome():
+    exp = input("Please enter an expression.")
+
+    if (palindrome.isPalindrome(exp)):
+        print("Your expression is a Palindrome")
+    else:
+        print("Your expression is not a Palindrome")
+        
+def testEnqueue():
+    print("Testing Enqueue Method")
+    b = queue()
+
+    b.enqueue('A')
+    b.enqueue('B')
+    b.enqueue('C')
+    b.enqueue('D')
+    b.enqueue(1)
+    b.enqueue(2)
+    b.enqueue(3)
+    print(b)
+
+def testQueueIsEmpty():
+    print("Testing is QueueIsEmpty Method")
+    
+    b = queue()
+    b.enqueue('J')
+    b.enqueue('O')
+    b.enqueue('B')
+    b.enqueue('S')
+
+    print("Queue size is:", b.size()) #4
+    print('Queue contains:', b) # [J O B S]
+
+    while(not b.isEmpty()):
+        print("Just dequeued:", b.dequeue())
+    
+    print("Queue size is:", b.size()) # 0
+    print("Queue contains:", b) # []
+
+def testDequeue():
+    print("Testing Dequeue Method")
+    b = queue()
+    b.enqueue('J')
+    b.enqueue('O')
+    b.enqueue('B')
+    b.enqueue('S')
+
+    print(b) #[J O B S]
+
+    b.dequeue() #Removes J
+    b.dequeue() #Removes O
+    b.dequeue() #Removes B
+    print(b) #[S]
+
+def testQueuePeek():
+    print("Testing QueuePeek Method")
+    b = queue()
+    b.enqueue('J')
+    b.enqueue('O')
+    b.enqueue('B')
+    b.enqueue('S')
+    print("Element in front of Queue", b.peek()) #J
+
+    b.dequeue()
+    print("Element in front of Queue", b.peek()) #O
 
 def testSelectionSort():
 
