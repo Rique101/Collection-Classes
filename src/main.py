@@ -6,6 +6,7 @@ from stack.serialsearch import *
 from stack.selectionsort import *
 from queues.queue import *
 from queues.palindrome import *
+from queues.palindrome2 import *
 def main():
     # testInit()
     # testGettersAndSetters()
@@ -35,7 +36,20 @@ def main():
     #testQueueIsEmpty()
     #testDequeue()
     #testQueuePeek()
-    testIsPalindrome()
+    #testIsPalindrome()
+    testIsPalindrome2()
+
+def testIsPalindrome2():
+        while True:
+            exp = input("Please enter an expression: ")
+            if palindrome2.isPalindrome(exp):
+                print("Your expression is a Palindrome")
+            else:
+                print("Your expression is not a Palindrome")
+            if(exp == ""):
+                print("Good Bye!")
+                break
+        
 
 def testIsPalindrome():
     exp = input("Please enter an expression.")
