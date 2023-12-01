@@ -7,6 +7,7 @@ from stack.selectionsort import *
 from queues.queue import *
 from queues.palindrome import *
 from queues.palindrome2 import *
+from queues.palindrome3 import *
 def main():
     # testInit()
     # testGettersAndSetters()
@@ -37,7 +38,24 @@ def main():
     #testDequeue()
     #testQueuePeek()
     #testIsPalindrome()
-    testIsPalindrome2()
+    #testIsPalindrome2()
+    testIsPalindrome3()
+
+def testIsPalindrome3():
+    while True:
+        exp = input("Please enter an expression: ")
+        
+        if exp == "":
+            print("Good Bye!")
+            break
+        
+        result = palindrome3.isPalindrome(exp)
+
+        if result is True:
+            print("Your expression is a Palindrome")
+        else:
+            # Print the characters where mismatches occurred
+            print(f"This is not a palindrome\nMismatched characters: {result}")
 
 def testIsPalindrome2():
         while True:
