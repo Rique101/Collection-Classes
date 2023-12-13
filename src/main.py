@@ -8,6 +8,7 @@ from queues.queue import *
 from queues.palindrome import *
 from queues.palindrome2 import *
 from queues.palindrome3 import *
+from loops import *
 def main():
     # testInit()
     # testGettersAndSetters()
@@ -39,7 +40,62 @@ def main():
     #testQueuePeek()
     #testIsPalindrome()
     #testIsPalindrome2()
-    testIsPalindrome3()
+    #testIsPalindrome3()
+    #SantaClaus()
+    #getPalindromes()
+    testRecursion()
+#Question 1
+def SantaClaus():
+    s = node("A",None)
+    s = node("T", s)
+    s = node("N", s)
+    s = node("A", s)
+    s = node("S", s)
+    
+    #Question 2
+    c = node("S", None)
+    c = node("U", c)
+    c = node("A", c)
+    c = node("L", c)
+    c = node("C", c)
+
+    #Question 3
+    selection = s
+
+    #Question 4
+    selection = selection.getLink()
+    selection = selection.getLink()
+    selection = selection.getLink()
+    selection = selection.getLink()
+
+    #Question 5
+    selection.setLink(c)
+
+#Question 6
+def getPalindromes():
+    s1 = stack()
+    s2 = stack()
+
+    Words = input("Enter ten words separated by a space: ").split()
+    if (palindrome.isPalindrome(Words)):
+        s1.push(Words)
+    else:
+        s2.push(Words)
+
+    print('These words are Palindromes', end=" ")
+    while (not s1.isEmpty()):
+        print(s1.pop(), end=" ")
+    print()
+
+    print('These words are not Palindromes', end=" ")
+    while (not s2.isEmpty()):
+        print(s2.pop(), end=" ")
+    print()
+
+#Question 7
+def testRecursion():
+    evens_recursive(-10,10)
+
 
 def testIsPalindrome3():
     while True:
